@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thanaphat45.github.io/sitemap.xml

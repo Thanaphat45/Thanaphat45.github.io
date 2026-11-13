@@ -207,7 +207,7 @@
         <span class="label" data-i18n="work.label">ผลงานที่เลือก</span>
         <div>
           <h2 data-i18n="work.h">ระบบที่ผมออกแบบและพัฒนาเอง</h2>
-          <p data-i18n="work.p">ทั้งสามชิ้นมีโค้ดให้ดูบน GitHub และระบบ ADL เปิดลองใช้งานจริงได้</p>
+          <p data-i18n="work.p">ทั้งสามชิ้นเปิดลองใช้งานจริงได้ และมีโค้ดให้ดูบน GitHub</p>
         </div>
       </div>
 
@@ -250,7 +250,7 @@
 <span class="ok">Tests: 21 passed (70 assertions)</span></pre>
         </div>
         <div>
-          <span class="tag" data-i18n="c2.tag">REST API</span>
+          <span class="tag live" data-i18n="c2.tag">ใช้งานจริง · REST API</span>
           <h3 data-i18n="c2.h">Clinic Queue API · ระบบบัตรคิวคลินิก</h3>
           <p class="sum" data-i18n="c2.sum">API สำหรับตู้กดบัตรคิว จอแสดงคิว และเคาน์เตอร์เจ้าหน้าที่ ผู้ป่วยเช็กคิวจากมือถือได้โดยไม่ต้องล็อกอิน</p>
           <ul>
@@ -260,8 +260,10 @@
           </ul>
           <div class="stack"><span>Laravel 13</span><span>Sanctum</span><span>PHPUnit</span><span>Docker</span><span>GitHub Actions</span></div>
           <div class="links">
+            <a href="https://clinic-queue-api-um6b.onrender.com/api/v1/services" target="_blank" rel="noopener" data-i18n="c.api">ลองเรียก API ↗</a>
             <a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener" data-i18n="c.code">ดูโค้ด ↗</a>
           </div>
+          <p class="note" data-i18n="c2.note">บัญชีทดลอง <code>staff@example.com</code> / <code>password</code> · ตัวอย่างการเรียกอยู่ใน README</p>
         </div>
       </article>
 
@@ -271,7 +273,7 @@
           <img src="images/rc-cars.jpg" alt="หน้ารายการรถของระบบเช่ารถ DriveRent" width="1306" height="822" loading="lazy">
         </div>
         <div>
-          <span class="tag" data-i18n="c3.tag">Full-stack · กำลังพัฒนา</span>
+          <span class="tag live" data-i18n="c3.tag">ใช้งานจริง · Full-stack</span>
           <h3 data-i18n="c3.h">DriveRent · ระบบเช่ารถ</h3>
           <p class="sum" data-i18n="c3.sum">เว็บเช่ารถพร้อมหน้าผู้ดูแลระบบ หน้าบ้าน React และหลังบ้าน Node.js ที่ใช้ stored procedures บน MySQL</p>
           <ul>
@@ -281,8 +283,10 @@
           </ul>
           <div class="stack"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>JWT</span></div>
           <div class="links">
+            <a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener" data-i18n="c.live">ลองใช้งานจริง ↗</a>
             <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener" data-i18n="c.code">ดูโค้ด ↗</a>
           </div>
+          <p class="note" data-i18n="c3.note">บัญชีทดลอง <code>demo_user</code> / <code>Demo@2026</code> · แอดมิน <code>demo_admin</code> / <code>Demo@2026</code></p>
         </div>
       </article>
     </div>
@@ -339,13 +343,13 @@
     'hero.lead': 'I build back-end systems and APIs with NestJS and Laravel that are correct and easy to maintain. I came from user support, so I design with the people who use these systems every day in mind.',
     'hero.cta1': 'View work', 'hero.cta2': 'Résumé', 'hero.cta3': 'Email me',
     'f1.t': 'Focus', 'f1.d': 'Back-end · REST API', 'f2.t': 'Core tools', 'f3.t': 'Experience', 'f3.d': '1 yr support · Dev internship', 'f4.t': 'Education', 'f4.d': 'B.Sc. IT · Buriram Rajabhat',
-    'work.label': 'Selected work', 'work.h': 'Systems I designed and built', 'work.p': 'All three have code on GitHub, and the ADL system is live to try.',
+    'work.label': 'Selected work', 'work.h': 'Systems I designed and built', 'work.p': 'All three are live to try, with code on GitHub.',
     'c1.tag': 'Live · Capstone', 'c1.h': 'Elderly Dependency Assessment System (ADL)', 'c1.sum': 'Moves community elderly-health records from paper to digital, from field assessments by staff to care instructions from doctors.',
     'c1.b1': 'Three standard assessments: Barthel ADL, Care Giver and TAI', 'c1.b2': 'Role-based access for Admin, Staff and Doctor', 'c1.b3': 'Migrated from MySQL to PostgreSQL and deployed with Docker',
     'c.live': 'Try it live ↗', 'c.code': 'View code ↗', 'c1.note': 'Demo login <code>demo_staff</code> / <code>Demo@2026</code> · first load may take about a minute',
-    'c2.tag': 'REST API', 'c2.h': 'Clinic Queue API', 'c2.sum': 'An API for ticket kiosks, queue display boards and staff counters. Patients check their place in line from their phone, no login needed.',
+    'c2.tag': 'Live · REST API', 'c.api': 'Try the API ↗', 'c2.note': 'Demo login <code>staff@example.com</code> / <code>password</code> · request examples in the README', 'c2.h': 'Clinic Queue API', 'c2.sum': 'An API for ticket kiosks, queue display boards and staff counters. Patients check their place in line from their phone, no login needed.',
     'c2.b1': 'No duplicate numbers even when kiosks issue at once (transaction + row lock)', 'c2.b2': 'Enforced status lifecycle with estimated wait time', 'c2.b3': '21 automated tests and CI on GitHub Actions',
-    'c3.tag': 'Full-stack · In progress', 'c3.h': 'DriveRent · Car rental', 'c3.sum': 'A car rental site with an admin area: React front end and a Node.js back end built on MySQL stored procedures.',
+    'c3.tag': 'Live · Full-stack', 'c3.note': 'Demo login <code>demo_user</code> / <code>Demo@2026</code> · admin <code>demo_admin</code> / <code>Demo@2026</code>', 'c3.h': 'DriveRent · Car rental', 'c3.sum': 'A car rental site with an admin area: React front end and a Node.js back end built on MySQL stored procedures.',
     'c3.b1': 'Server-side totals and stock updates in a transaction', 'c3.b2': 'Admin page to add, edit and delete cars and manage user roles', 'c3.b3': 'Whole stack runs with one docker compose command',
     'xp.label': 'Experience', 'xp.h': 'Working with real systems and real users',
     'x1.w': 'Oct 2026 – now', 'x1.p': 'Support in-house users with printers, networking and Microsoft Office, and develop the company website with help from Claude Code and ChatGPT.',

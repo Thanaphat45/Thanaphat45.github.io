@@ -381,7 +381,7 @@
 
   // wake the free Render instance before a visitor clicks "try it live"
   let warmed = false;
-  new IntersectionObserver(([e], o) => { if (e.isIntersecting && !warmed) { warmed = true; o.disconnect(); fetch('https://adl-assessment.onrender.com/up', { mode: 'no-cors' }).catch(() => {}); } }, { rootMargin: '400px 0px' }).observe(document.getElementById('work'));
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting && !warmed) { warmed = true; o.disconnect(); ['https://adl-assessment.onrender.com/up', 'https://clinic-queue-api-um6b.onrender.com/up', 'https://driverent-whky.onrender.com/api/cars'].forEach(u => fetch(u, { mode: 'no-cors' }).catch(() => {})); } }, { rootMargin: '400px 0px' }).observe(document.getElementById('work'));
 })();
 </script>
 </body>

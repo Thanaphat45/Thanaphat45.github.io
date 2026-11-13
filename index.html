@@ -162,9 +162,13 @@
   .proj-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
   .demo-note { margin-top: 20px; font-family: var(--mono); font-size: 13px; color: var(--dim); }
   .demo-note code { color: var(--ink); }
-  .wip { margin-top: 96px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 32px; border: 1px dashed var(--line); border-radius: 14px; }
-  .wip b { font-family: var(--display); font-weight: 500; font-size: 22px; }
-  .wip span { font-family: var(--mono); font-size: 13px; color: var(--amber); white-space: nowrap; }
+  .wip { margin-top: 120px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 24px; border: 1px dashed var(--line); border-radius: 16px; }
+  .wip img { width: 100%; height: auto; border-radius: 10px; display: block; }
+  .wip b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3vw, 40px); line-height: 1.15; margin-top: 10px; }
+  .wip p { margin-top: 14px; color: var(--muted); font-size: 16px; }
+  .wip code { font-family: var(--mono); color: var(--ink); font-size: 14px; }
+  .wip-tag { font-family: var(--mono); font-size: 13px; color: var(--amber); }
+  @media (max-width: 768px) { .wip { grid-template-columns: 1fr; gap: 20px; padding: 16px; } }
 
   /* journey */
   .journey { position: relative; padding-left: 64px; }
@@ -245,7 +249,6 @@
     .fact + .fact { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
     .fact { padding: 20px 0; }
     .browser { transform: none !important; }
-    .wip { flex-direction: column; align-items: flex-start; padding: 22px; }
     .journey { padding-left: 40px; }
     .rail { left: 7px; }
     .stop::before { left: -40px; width: 14px; height: 14px; }
@@ -366,7 +369,14 @@
           <li><div><b>Docker + deploy อัตโนมัติ</b><span>push ขึ้น GitHub แล้ว Render build ใหม่ให้เอง</span></div></li>
         </ol>
       </div>
-      <div class="wip reveal"><b>ระบบเช่ารถ · React + TypeScript</b><span>● กำลังพัฒนา</span></div>
+      <div class="wip reveal">
+        <img src="images/rc-cars.jpg" alt="หน้ารายการรถของระบบเช่ารถ DriveRent แสดงการ์ดรถพร้อมภาพประกอบตามประเภท ราคาต่อวัน และสต็อก" width="1306" height="822" loading="lazy">
+        <div class="wip-body">
+          <span class="wip-tag">● กำลังพัฒนา</span>
+          <b>DriveRent · ระบบเช่ารถ</b>
+          <p>React + TypeScript หน้าบ้าน · Node.js / Express + MySQL หลังบ้าน (JWT, stored procedures 14 ตัว) · รันทั้งระบบด้วย <code>docker compose up</code></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -512,7 +522,7 @@
     '.feat li:nth-child(2)': '<div><b>Role-based access (RBAC)</b><span>Admin, Staff and Doctor each see only their own data</span></div>',
     '.feat li:nth-child(3)': '<div><b>Migrated MySQL → PostgreSQL</b><span>Made the code portable across both, deployed on Supabase</span></div>',
     '.feat li:nth-child(4)': '<div><b>Docker + auto-deploy</b><span>Push to GitHub and Render rebuilds automatically</span></div>',
-    '.wip': '<b>Car rental system · React + TypeScript</b><span>● In progress</span>',
+    '.wip-body': '<span class="wip-tag">● In progress</span><b>DriveRent · Car rental system</b><p>React + TypeScript front end · Node.js / Express + MySQL back end (JWT, 14 stored procedures) · whole stack runs with <code>docker compose up</code></p>',
     '.stop:nth-of-type(1)': '<span class="when">Oct 2026 – now</span><h3>IT Support</h3><p>Supporting in-house users with printers, Wi‑Fi and Microsoft Office, and improving the company website with Claude Code and ChatGPT.</p><ul class="chips"><li>Claude Code</li><li>ChatGPT</li><li>Microsoft Office</li><li>Network</li></ul>',
     '.stop:nth-of-type(2)': '<span class="when">1 year</span><h3>Application Support L1</h3><p class="org">Fintechinno</p><p>Resolved customer issues over LINE, ran UAT on every release, traced errors with DevTools and handed endpoints and payloads to developers, and wrote one-page user guides.</p><ul class="chips"><li>UAT</li><li>DevTools</li><li>API Debugging</li><li>AnyDesk</li></ul>',
     '.stop:nth-of-type(3)': '<span class="when">3-month internship</span><h3>Web Developer Intern</h3><p class="org">Asha Tech Corporation</p><p>Built APIs with Laravel 11.</p><ul class="chips"><li>Laravel 11</li><li>REST API</li></ul>',

@@ -162,6 +162,17 @@
   .proj-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
   .demo-note { margin-top: 20px; font-family: var(--mono); font-size: 13px; color: var(--dim); }
   .demo-note code { color: var(--ink); }
+  .more { margin-top: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .mini { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--bg-2); display: flex; flex-direction: column; }
+  .mini > img { width: 100%; height: 260px; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); }
+  .mini-term { height: 260px; margin: 0; padding: 22px 24px; background: var(--bg); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow: hidden; color: var(--ink); }
+  .mini-body { padding: 28px; }
+  .mini-body b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; margin-top: 10px; }
+  .mini-body p { margin-top: 10px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .mini-body ul { margin-top: 16px; list-style: none; }
+  .mini-body li { padding-left: 18px; position: relative; margin-top: 8px; color: var(--muted); font-size: 15px; }
+  .mini-body li::before { content: ""; position: absolute; left: 0; top: .75em; width: 8px; height: 2px; background: var(--lime); }
+  @media (max-width: 860px) { .more { grid-template-columns: 1fr; } .mini > img, .mini-term { height: 200px; } }
   .wip { margin-top: 120px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 24px; border: 1px dashed var(--line); border-radius: 16px; }
   .wip img { width: 100%; height: auto; border-radius: 10px; display: block; }
   .wip b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3vw, 40px); line-height: 1.15; margin-top: 10px; }
@@ -369,13 +380,43 @@
           <li><div><b>Docker + deploy อัตโนมัติ</b><span>push ขึ้น GitHub แล้ว Render build ใหม่ให้เอง</span></div></li>
         </ol>
       </div>
-      <div class="wip reveal">
-        <img src="images/rc-cars.jpg" alt="หน้ารายการรถของระบบเช่ารถ DriveRent แสดงการ์ดรถพร้อมภาพประกอบตามประเภท ราคาต่อวัน และสต็อก" width="1306" height="822" loading="lazy">
-        <div class="wip-body">
-          <span class="wip-tag">● กำลังพัฒนา</span>
-          <b>DriveRent · ระบบเช่ารถ</b>
-          <p>React + TypeScript หน้าบ้าน · Node.js / Express + MySQL หลังบ้าน (JWT, stored procedures 14 ตัว) · รันทั้งระบบด้วย <code>docker compose up</code></p>
-        </div>
+      <div class="more reveal">
+        <article class="mini">
+          <img src="images/rc-cars.jpg" alt="หน้ารายการรถของระบบเช่ารถ DriveRent แสดงการ์ดรถพร้อมภาพประกอบตามประเภท ราคาต่อวัน และสต็อก" width="1306" height="822" loading="lazy">
+          <div class="mini-body" id="mini-rc">
+            <span class="wip-tag">● กำลังพัฒนา</span>
+            <b>DriveRent · ระบบเช่ารถ</b>
+            <p>React + TypeScript · Node.js / Express · MySQL (stored procedures 14 ตัว) · JWT · Docker Compose</p>
+            <ul>
+              <li>เช่ารถ คำนวณราคารวมฝั่งเซิร์ฟเวอร์ และตัดสต็อกใน transaction</li>
+              <li>หน้า Admin เพิ่ม/แก้/ลบรถ และจัดการสิทธิ์ผู้ใช้</li>
+              <li>ออกแบบหน้าตาใหม่ทั้งระบบ พร้อมภาพประกอบรถแยกตามประเภท</li>
+            </ul>
+          </div>
+        </article>
+        <article class="mini">
+          <pre class="mini-term" aria-label="ตัวอย่างการเรียก Clinic Queue API"><span class="t-d">$</span> <span class="t-m">POST</span> /api/v1/tickets
+<span class="t-ok">201</span> { <span class="t-k">"number"</span>: <span class="t-s">"A001"</span>, <span class="t-k">"ahead"</span>: <span class="t-n">0</span> }
+
+<span class="t-d">$</span> <span class="t-m">POST</span> /api/v1/services/1/call-next
+<span class="t-ok">200</span> { <span class="t-k">"number"</span>: <span class="t-s">"A001"</span>, <span class="t-k">"counter"</span>: <span class="t-s">"1"</span> }
+
+<span class="t-d">$</span> <span class="t-m">GET</span> /api/v1/services/1/board
+<span class="t-ok">200</span> { <span class="t-k">"next"</span>: [<span class="t-s">"A002"</span>, <span class="t-s">"A003"</span>] }
+
+<span class="t-d">$</span> php artisan test
+<span class="t-ok">Tests: 10 passed (56 assertions)</span></pre>
+          <div class="mini-body" id="mini-cq">
+            <span class="wip-tag">● เสร็จแล้ว · REST API</span>
+            <b>Clinic Queue API · ระบบบัตรคิวคลินิก</b>
+            <p>Laravel 13 · PHP 8.5 · Sanctum · PostgreSQL/SQLite · Docker · GitHub Actions</p>
+            <ul>
+              <li>เลขคิวไม่ซ้ำแม้กดพร้อมกันหลายตู้ (transaction + row lock) เริ่มใหม่ทุกวัน</li>
+              <li>สถานะคิวเดินตามลำดับเท่านั้น และบอกเวลารอโดยประมาณ</li>
+              <li>สิทธิ์ Staff/Admin, rate limit และ Feature test ครอบทุก endpoint หลัก</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -522,7 +563,8 @@
     '.feat li:nth-child(2)': '<div><b>Role-based access (RBAC)</b><span>Admin, Staff and Doctor each see only their own data</span></div>',
     '.feat li:nth-child(3)': '<div><b>Migrated MySQL → PostgreSQL</b><span>Made the code portable across both, deployed on Supabase</span></div>',
     '.feat li:nth-child(4)': '<div><b>Docker + auto-deploy</b><span>Push to GitHub and Render rebuilds automatically</span></div>',
-    '.wip-body': '<span class="wip-tag">● In progress</span><b>DriveRent · Car rental system</b><p>React + TypeScript front end · Node.js / Express + MySQL back end (JWT, 14 stored procedures) · whole stack runs with <code>docker compose up</code></p>',
+    '#mini-rc': '<span class="wip-tag">● In progress</span><b>DriveRent · Car rental</b><p>React + TypeScript · Node.js / Express · MySQL (14 stored procedures) · JWT · Docker Compose</p><ul><li>Rentals with server-side totals and stock updates in a transaction</li><li>Admin page to add/edit/delete cars and manage user roles</li><li>Full UI redesign with per-type car illustrations</li></ul>',
+    '#mini-cq': '<span class="wip-tag">● Done · REST API</span><b>Clinic Queue API</b><p>Laravel 13 · PHP 8.5 · Sanctum · PostgreSQL/SQLite · Docker · GitHub Actions</p><ul><li>Race-safe ticket numbers across kiosks (transaction + row lock), reset daily</li><li>Enforced status lifecycle and estimated wait time</li><li>Staff/Admin roles, rate limits, feature tests on every core endpoint</li></ul>',
     '.stop:nth-of-type(1)': '<span class="when">Oct 2026 – now</span><h3>IT Support</h3><p>Supporting in-house users with printers, Wi‑Fi and Microsoft Office, and improving the company website with Claude Code and ChatGPT.</p><ul class="chips"><li>Claude Code</li><li>ChatGPT</li><li>Microsoft Office</li><li>Network</li></ul>',
     '.stop:nth-of-type(2)': '<span class="when">1 year</span><h3>Application Support L1</h3><p class="org">Fintechinno</p><p>Resolved customer issues over LINE, ran UAT on every release, traced errors with DevTools and handed endpoints and payloads to developers, and wrote one-page user guides.</p><ul class="chips"><li>UAT</li><li>DevTools</li><li>API Debugging</li><li>AnyDesk</li></ul>',
     '.stop:nth-of-type(3)': '<span class="when">3-month internship</span><h3>Web Developer Intern</h3><p class="org">Asha Tech Corporation</p><p>Built APIs with Laravel 11.</p><ul class="chips"><li>Laravel 11</li><li>REST API</li></ul>',

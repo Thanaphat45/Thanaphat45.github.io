@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ธนภัทร อุปพงษ์ — Resume</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07080a;
+    --paper: #0e1014;
+    --ink: #f1f2ee;
+    --muted: #8b919b;
+    --line: #20242b;
+    --accent: #c8f53c;
+    --accent-soft: #1a1f10;
+    --sans: "IBM Plex Sans Thai", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  .back { display: block; max-width: 880px; margin: 0 auto 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent); }
+  .tags li.strong { color: #0b0d02 !important; }
+  @media print { .back { display: none; } }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: var(--sans);
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    padding: 48px 16px;
+  }
+  .sheet {
+    max-width: 880px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); padding: 64px 72px;
+  }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 32px; margin-bottom: 40px; }
+  h1 { font-size: 40px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+  .en { font-family: var(--mono); font-size: 15px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
+  .role { margin-top: 20px; font-size: 18px; font-weight: 600; color: var(--accent); }
+  .contact { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-family: var(--mono); font-size: 14px; }
+  .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+  .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .summary { margin-top: 12px; max-width: 62ch; color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; }
+  section { display: contents; }
+  h2 {
+    font-family: var(--mono); font-size: 13px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--muted); padding-top: 4px;
+  }
+  .body { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid var(--line); }
+  section:last-child .body { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
+  .item + .item { margin-top: 32px; }
+  .item-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+  h3 { font-size: 18px; font-weight: 600; line-height: 1.4; }
+  .when { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .org { color: var(--accent); font-weight: 500; margin-top: 2px; }
+  ul { margin-top: 12px; padding-left: 20px; }
+  li { margin-top: 6px; }
+  li::marker { color: var(--accent); }
+
+  .skills { display: grid; gap: 20px; }
+  .skill-group h3 { font-size: 15px; margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .tags li {
+    margin: 0; font-size: 14px; padding: 4px 12px; background: var(--accent-soft);
+    color: var(--ink); border-radius: 4px;
+  }
+  .tags li.strong { background: var(--accent); color: var(--paper); font-weight: 500; }
+
+  .print-btn {
+    position: fixed; right: 24px; bottom: 24px; font: 500 14px var(--sans);
+    background: var(--ink); color: var(--paper); border: 0; padding: 12px 20px;
+    border-radius: 6px; cursor: pointer;
+  }
+  .print-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (max-width: 768px) {
+    body { padding: 0; }
+    .sheet { border: 0; padding: 40px 16px; }
+    h1 { font-size: 32px; }
+    .grid { grid-template-columns: 1fr; }
+    h2 { margin-bottom: 16px; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { border: 0; padding: 0; max-width: none; }
+    .print-btn { display: none; }
+    :root { --paper:#fff; --ink:#000; --bg:#fff; }
+  }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← กลับไปหน้าแนะนำตัว</a>
+<main class="sheet">
+  <header>
+    <h1>ธนภัทร อุปพงษ์</h1>
+    <p class="en">THANAPHAT AUPAPHONG</p>
+    <p class="role">Web Developer · Application Support</p>
+    <p class="contact">
+      <a href="mailto:thanaphat.aupaphong45@gmail.com">thanaphat.aupaphong45@gmail.com</a>
+      <a href="https://github.com/Thanaphat45" target="_blank" rel="noopener">github.com/Thanaphat45</a>
+    </p>
+    <p class="summary">
+      จบสาขาเทคโนโลยีสารสนเทศ สายโปรแกรมเมอร์ ถนัดเขียนเว็บ โดยเฉพาะการออกแบบฟังก์ชันหลังบ้านและ API
+      และทำหน้าบ้านได้ มีประสบการณ์ซัพพอร์ตระบบจริงกับผู้ใช้ ทดสอบ UAT และวิเคราะห์ error ส่งต่อทีมพัฒนา
+      ปัจจุบันใช้เครื่องมือ AI อย่าง Claude Code และ ChatGPT ในการพัฒนาเว็บไซต์ขององค์กร
+    </p>
+  </header>
+
+  <div class="grid">
+    <section>
+      <h2>ประสบการณ์</h2>
+      <div class="body">
+        <article class="item">
+          <div class="item-head">
+            <h3>IT Support</h3>
+            <span class="when">ต.ค. 2569 – ปัจจุบัน</span>
+          </div>
+          <p class="org">ที่ทำงานปัจจุบัน</p>
+          <ul>
+            <li>ซัพพอร์ตผู้ใช้ภายในบริษัท แก้ปัญหาเครื่องพิมพ์ เชื่อมต่อเครื่องพิมพ์ใหม่ และแก้ปัญหา Wi‑Fi</li>
+            <li>แก้ปัญหาการใช้งาน Microsoft Office เช่น Excel และ Word</li>
+            <li>พัฒนาเว็บไซต์ขององค์กรตามความต้องการของบริษัท โดยใช้ Claude Code และ ChatGPT ช่วยพัฒนา</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Application Support L1</h3>
+            <span class="when">1 ปี</span>
+          </div>
+          <p class="org">Fintechinno</p>
+          <ul>
+            <li>รับเรื่องและแก้ปัญหาให้ลูกค้าผ่าน LINE Support ทั้งปัญหาของระบบและปัญหาที่เกิดจากการใช้งานผิดวิธี</li>
+            <li>แก้ปัญหาเองผ่านเครื่องมือหลังบ้านที่ทีมโปรแกรมเมอร์ทำไว้ และใช้ AnyDesk รีโมตเข้าไปดูหน้าจอผู้ใช้เมื่อหาสาเหตุไม่เจอ</li>
+            <li>ทดสอบ UAT ตาม Update List ตรวจว่า flow ปกติยังทำงานได้ก่อน แล้วจึงทดสอบส่วนที่อัปเดต พร้อมบันทึกวิธีทดสอบและผลลัพธ์</li>
+            <li>ใช้ DevTools (Inspect) หาสาเหตุ error แล้วส่ง endpoint และ response payload ต่อให้โปรแกรมเมอร์ที่รับผิดชอบ</li>
+            <li>ทำคู่มือแบบ One-page เพื่อใช้สอนผู้ใช้หน้างาน</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Web Developer (นักศึกษาฝึกงาน)</h3>
+            <span class="when">3 เดือน</span>
+          </div>
+          <p class="org">Asha Tech Corporation</p>
+          <ul>
+            <li>พัฒนา API เบื้องต้นด้วย Laravel 11</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>ผลงาน</h2>
+      <div class="body">
+        <article class="item">
+          <h3>ระบบประเมินผู้สูงอายุที่มีภาวะพึ่งพิง (ADL)</h3>
+          <p class="org">โปรเจกต์จบ · Laravel, PHP, PostgreSQL, Docker · deploy บน Render + Supabase</p>
+          <p class="contact"><a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a> <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>ระบบเช่ารถ</h3>
+            <span class="when">กำลังพัฒนา</span>
+          </div>
+          <p class="org">React, TypeScript, Vite</p>
+          <ul><li>ระบบล็อกอินและสมัครสมาชิก ค้นหาและกรองรถ และหน้าผู้ดูแลระบบสำหรับจัดการรถ</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>การศึกษา</h2>
+      <div class="body">
+        <article class="item">
+          <div class="item-head">
+            <h3>ปริญญาตรี สาขาเทคโนโลยีสารสนเทศ (IT)</h3>
+            <span class="when">จบปี 2567</span>
+          </div>
+          <p class="org">มหาวิทยาลัยราชภัฏบุรีรัมย์</p>
+          <p>สายโปรแกรมเมอร์</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>ทักษะ</h2>
+      <div class="body skills">
+        <div class="skill-group">
+          <h3>พัฒนาเว็บ</h3>
+          <ul class="tags">
+            <li class="strong">Laravel</li><li class="strong">PHP</li><li class="strong">API Design</li>
+            <li>MySQL</li><li>PostgreSQL</li><li>Docker</li><li>Supabase</li><li>Render</li>
+            <li>React</li><li>TypeScript</li><li>JavaScript</li><li>Bootstrap</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>ทดสอบและซัพพอร์ต</h3>
+          <ul class="tags">
+            <li>UAT Testing</li><li>Browser DevTools</li><li>API Debugging</li>
+            <li>AnyDesk</li><li>เขียนคู่มือผู้ใช้</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>IT ทั่วไปและเครื่องมือ AI</h3>
+          <ul class="tags">
+            <li>Printer &amp; Network</li><li>Microsoft Office</li>
+            <li>Claude Code</li><li>ChatGPT</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<button class="print-btn" onclick="window.print()" aria-label="พิมพ์หรือบันทึกเป็น PDF">บันทึก PDF</button>
+</body>
+</html>

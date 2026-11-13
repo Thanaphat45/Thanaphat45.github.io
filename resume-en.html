@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanaphat Aupaphong — Résumé</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07080a;
+    --paper: #0e1014;
+    --ink: #f1f2ee;
+    --muted: #8b919b;
+    --line: #20242b;
+    --accent: #c8f53c;
+    --accent-soft: #1a1f10;
+    --sans: "IBM Plex Sans Thai", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  .back { display: block; max-width: 880px; margin: 0 auto 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent); }
+  .tags li.strong { color: #0b0d02 !important; }
+  @media print { .back { display: none; } }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: var(--sans);
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    padding: 48px 16px;
+  }
+  .sheet {
+    max-width: 880px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); padding: 64px 72px;
+  }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 32px; margin-bottom: 40px; }
+  h1 { font-size: 40px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+  .en { font-family: var(--mono); font-size: 15px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
+  .role { margin-top: 20px; font-size: 18px; font-weight: 600; color: var(--accent); }
+  .contact { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-family: var(--mono); font-size: 14px; }
+  .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+  .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .summary { margin-top: 12px; max-width: 62ch; color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; }
+  section { display: contents; }
+  h2 {
+    font-family: var(--mono); font-size: 13px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--muted); padding-top: 4px;
+  }
+  .body { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid var(--line); }
+  section:last-child .body { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
+  .item + .item { margin-top: 32px; }
+  .item-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+  h3 { font-size: 18px; font-weight: 600; line-height: 1.4; }
+  .when { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .org { color: var(--accent); font-weight: 500; margin-top: 2px; }
+  ul { margin-top: 12px; padding-left: 20px; }
+  li { margin-top: 6px; }
+  li::marker { color: var(--accent); }
+
+  .skills { display: grid; gap: 20px; }
+  .skill-group h3 { font-size: 15px; margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .tags li {
+    margin: 0; font-size: 14px; padding: 4px 12px; background: var(--accent-soft);
+    color: var(--ink); border-radius: 4px;
+  }
+  .tags li.strong { background: var(--accent); color: var(--paper); font-weight: 500; }
+
+  .print-btn {
+    position: fixed; right: 24px; bottom: 24px; font: 500 14px var(--sans);
+    background: var(--ink); color: var(--paper); border: 0; padding: 12px 20px;
+    border-radius: 6px; cursor: pointer;
+  }
+  .print-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (max-width: 768px) {
+    body { padding: 0; }
+    .sheet { border: 0; padding: 40px 16px; }
+    h1 { font-size: 32px; }
+    .grid { grid-template-columns: 1fr; }
+    h2 { margin-bottom: 16px; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { border: 0; padding: 0; max-width: none; }
+    .print-btn { display: none; }
+    :root { --paper:#fff; --ink:#000; --bg:#fff; }
+  }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Back to portfolio</a> <a class="back" href="resume.html" style="margin-top:-8px">ภาษาไทย</a>
+<main class="sheet">
+  <header>
+    <h1>Thanaphat Aupaphong</h1>
+    <p class="en">ธนภัทร อุปพงษ์</p>
+    <p class="role">Back-end Web Developer · Application Support</p>
+    <p class="contact">
+      <a href="mailto:thanaphat.aupaphong45@gmail.com">thanaphat.aupaphong45@gmail.com</a>
+      <a href="https://github.com/Thanaphat45" target="_blank" rel="noopener">github.com/Thanaphat45</a>
+    </p>
+    <p class="summary">
+      IT graduate on the programming track, focused on back-end web development and API design, comfortable on the front end.
+      One year of hands-on application support: handling real user issues, running UAT, and tracing errors down to the endpoint and payload for the dev team.
+      Currently improving a company website with AI tools such as Claude Code and ChatGPT.
+    </p>
+  </header>
+
+  <div class="grid">
+    <section>
+      <h2>Experience</h2>
+      <div class="body">
+        <article class="item">
+          <div class="item-head"><h3>IT Support</h3><span class="when">Oct 2026 – Present</span></div>
+          <p class="org">Current employer</p>
+          <ul>
+            <li>Support in-house users: printer issues, new printer setup and Wi‑Fi troubleshooting</li>
+            <li>Resolve Microsoft Office problems (Excel, Word)</li>
+            <li>Develop the company website to business requirements using Claude Code and ChatGPT</li>
+          </ul>
+        </article>
+        <article class="item">
+          <div class="item-head"><h3>Application Support L1</h3><span class="when">1 year</span></div>
+          <p class="org">Fintechinno</p>
+          <ul>
+            <li>Handled customer tickets via LINE support, covering both system faults and user errors</li>
+            <li>Fixed issues directly with internal admin tools; used AnyDesk to reproduce problems on the user's screen</li>
+            <li>Ran UAT for every release list: verified the core flow first, then each change, and documented test steps and results</li>
+            <li>Diagnosed errors with browser DevTools and escalated the failing endpoint and response payload to the responsible developer</li>
+            <li>Wrote one-page guides used to train end users on site</li>
+          </ul>
+        </article>
+        <article class="item">
+          <div class="item-head"><h3>Web Developer Intern</h3><span class="when">3 months</span></div>
+          <p class="org">Asha Tech Corporation</p>
+          <ul><li>Built REST APIs with Laravel 11</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="body">
+        <article class="item">
+          <h3>Dependent Elderly Assessment System (ADL)</h3>
+          <p class="org">Capstone · Laravel, PHP, PostgreSQL, Docker · deployed on Render + Supabase</p>
+          <ul>
+            <li>Digitizes community elderly-health assessments (Barthel ADL, Care Giver, TAI) with role-based access for Admin, Staff and Doctor</li>
+            <li>Ported the app from MySQL to PostgreSQL while keeping MySQL support, and deployed it with Docker on Render + Supabase</li>
+          </ul>
+          <p class="contact"><a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a> <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></p>
+        </article>
+        <article class="item">
+          <div class="item-head"><h3>Car Rental System</h3><span class="when">In progress</span></div>
+          <p class="org">React, TypeScript, Vite</p>
+          <ul><li>Login and registration, car search and filtering, and an admin area for managing the fleet</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="body">
+        <article class="item">
+          <div class="item-head"><h3>B.Sc. Information Technology</h3><span class="when">Graduated 2024</span></div>
+          <p class="org">Buriram Rajabhat University</p>
+          <p>Programming track</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="body skills">
+        <div class="skill-group"><h3>Web development</h3><ul class="tags">
+          <li class="strong">Laravel</li><li class="strong">PHP</li><li class="strong">API Design</li>
+          <li>MySQL</li><li>PostgreSQL</li><li>Docker</li><li>Supabase</li><li>Render</li>
+          <li>React</li><li>TypeScript</li><li>JavaScript</li><li>Bootstrap</li></ul></div>
+        <div class="skill-group"><h3>Testing &amp; support</h3><ul class="tags">
+          <li>UAT Testing</li><li>Browser DevTools</li><li>API Debugging</li><li>AnyDesk</li><li>User documentation</li></ul></div>
+        <div class="skill-group"><h3>IT &amp; AI tools</h3><ul class="tags">
+          <li>Printer &amp; Network</li><li>Microsoft Office</li><li>Claude Code</li><li>ChatGPT</li></ul></div>
+      </div>
+    </section>
+  </div>
+</main>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Save PDF</button>
+</body>
+</html>

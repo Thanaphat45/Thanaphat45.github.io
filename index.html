@@ -537,6 +537,7 @@
       .replace(l === 'en' ? '"ธนภัทร อุปพงษ์"' : '"Thanaphat Aupaphong"', l === 'en' ? '"Thanaphat Aupaphong"' : '"ธนภัทร อุปพงษ์"')
       .replace(l === 'en' ? '"API ที่ผู้ใช้จริงใช้ได้"' : '"APIs real users rely on"', l === 'en' ? '"APIs real users rely on"' : '"API ที่ผู้ใช้จริงใช้ได้"');
     termLang = l;
+    const rl = document.querySelector('.contact-row a:nth-child(3)'); if (rl) rl.href = l === 'en' ? 'resume-en.html' : 'resume.html';
     if (typeof wrapWords === 'function') { wrapWords(st); words.length = 0; words.push(...st.querySelectorAll('.w')); onScroll && onScroll(); }
     try { localStorage.setItem('lang', l); } catch (e) {}
   };

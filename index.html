@@ -186,7 +186,7 @@
     <div class="wrap">
       <span class="avail fade"><i></i><span data-i18n="hero.avail">พร้อมรับงาน · Back-end / Full-stack</span></span>
       <h1 class="fade"><span data-i18n="hero.name" style="color:inherit;font-weight:700">ธนภัทร อุปพงษ์</span><span data-i18n="hero.role">นักพัฒนาเว็บสายหลังบ้าน</span></h1>
-      <p class="lead fade" data-i18n="hero.lead">ผมสร้างระบบหลังบ้านและ API ด้วย NestJS และ Laravel ที่ทำงานถูกต้องและดูแลต่อได้ง่าย และเพราะเคยทำงานซัพพอร์ตผู้ใช้จริงมาก่อน ผมจึงออกแบบระบบโดยคิดถึงคนที่ต้องใช้งานมันทุกวัน</p>
+      <p class="lead fade" data-i18n="hero.lead">ผมสร้างระบบหลังบ้านและ API ด้วย NestJS และ Laravel ที่ทำงานถูกต้องและดูแลต่อได้ง่าย พร้อมนำ AI อย่าง Claude มาช่วยงานจริงในระบบ และเพราะเคยทำงานซัพพอร์ตผู้ใช้จริงมาก่อน ผมจึงออกแบบระบบโดยคิดถึงคนที่ต้องใช้งานมันทุกวัน</p>
       <div class="actions fade">
         <a class="btn primary" href="#work" data-i18n="hero.cta1">ดูผลงาน</a>
         <a class="btn" href="resume.html" id="resumeLink" data-i18n="hero.cta2">เรซูเม่</a>
@@ -207,9 +207,32 @@
         <span class="label" data-i18n="work.label">ผลงานที่เลือก</span>
         <div>
           <h2 data-i18n="work.h">ระบบที่ผมออกแบบและพัฒนาเอง</h2>
-          <p data-i18n="work.p">ทั้งสามชิ้นเปิดลองใช้งานจริงได้ และมีโค้ดให้ดูบน GitHub</p>
+          <p data-i18n="work.p">ทุกชิ้นเปิดลองใช้งานจริงได้ และมีโค้ดให้ดูบน GitHub</p>
         </div>
       </div>
+
+      <article class="case fade">
+        <a class="media" href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener" aria-label="IT Helpdesk demo">
+          <div class="bar"><i></i><i></i><i></i><span>it-helpdesk · /tickets</span></div>
+          <img src="images/helpdesk-queue.jpg" alt="หน้าคิวงานแจ้งซ่อมของระบบ IT Helpdesk" width="1306" height="822" loading="lazy">
+        </a>
+        <div>
+          <span class="tag live" data-i18n="c4.tag">ใช้งานจริง · AI + Full-stack</span>
+          <h3 data-i18n="c4.h">IT Helpdesk · ระบบแจ้งซ่อมไอทีที่มี AI ช่วยคัดแยก</h3>
+          <p class="sum" data-i18n="c4.sum">พนักงานแจ้งปัญหาเป็นภาษาไทยธรรมดา Claude จัดหมวด ประเมินความเร่งด่วน สรุปเรื่อง และร่างคำตอบให้เจ้าหน้าที่ IT แก้ก่อนส่ง มาจากสิ่งที่ผมเจอตอนทำงานซัพพอร์ต</p>
+          <ul>
+            <li data-i18n="c4.b1">เรียก Claude API แบบ structured output ตรวจผลด้วย Zod และมีกฎสำรองเมื่อ AI ใช้ไม่ได้</li>
+            <li data-i18n="c4.b2">SLA ตามความเร่งด่วน สถานะงานเดินตามลำดับ และสิทธิ์ 3 บทบาท</li>
+            <li data-i18n="c4.b3">กันเจ้าหน้าที่สองคนรับงานเดียวกันพร้อมกัน · 26 tests และ CI</li>
+          </ul>
+          <div class="stack"><span>NestJS</span><span>Angular</span><span>Claude API</span><span>TypeORM</span><span>PostgreSQL</span><span>Docker</span></div>
+          <div class="links">
+            <a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener" data-i18n="c.live">ลองใช้งานจริง ↗</a>
+            <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener" data-i18n="c.code">ดูโค้ด ↗</a>
+          </div>
+          <p class="note" data-i18n="c4.note">กดปุ่มบัญชีทดลองในหน้าเข้าสู่ระบบได้เลย · เปิดครั้งแรกอาจรอประมาณ 1 นาที</p>
+        </div>
+      </article>
 
       <article class="case fade">
         <a class="media" href="https://adl-assessment.onrender.com" target="_blank" rel="noopener" aria-label="adl-assessment.onrender.com">
@@ -314,9 +337,11 @@
         <h2 data-i18n="sk.h">เครื่องมือที่ใช้ทำงาน</h2>
       </div>
       <div class="skills fade">
-        <div><h3 data-i18n="sk.1">หลังบ้าน</h3><ul><li>NestJS <small data-i18n="lv.now">ใช้อยู่ตอนนี้</small></li><li>Laravel · PHP <small data-i18n="lv.main">หลัก</small></li><li>REST API <small data-i18n="lv.main">หลัก</small></li><li>Node.js · TypeScript · Express</li><li>MySQL · PostgreSQL</li></ul></div>
-        <div><h3 data-i18n="sk.2">หน้าบ้าน</h3><ul><li>JavaScript</li><li>React · TypeScript</li><li>HTML · CSS</li><li>Bootstrap</li></ul></div>
-        <div><h3 data-i18n="sk.3">ระบบและการทำงาน</h3><ul><li>Docker</li><li>Git · GitHub Actions</li><li>UAT · API Debugging</li><li>Claude Code · ChatGPT</li></ul></div>
+        <div><h3 data-i18n="sk.1">หลังบ้าน</h3><ul><li>NestJS <small data-i18n="lv.now">ใช้อยู่ตอนนี้</small></li><li>Laravel · PHP <small data-i18n="lv.main">หลัก</small></li><li>REST API <small data-i18n="lv.main">หลัก</small></li><li>Node.js · TypeScript · Express</li><li>TypeORM · JWT</li></ul></div>
+        <div><h3 data-i18n="sk.4">ฐานข้อมูล</h3><ul><li>PostgreSQL · Supabase</li><li>MySQL</li><li>DBeaver · Navicat</li><li>XAMPP · phpMyAdmin</li></ul></div>
+        <div><h3 data-i18n="sk.2">หน้าบ้าน</h3><ul><li>Angular</li><li>React · TypeScript</li><li>JavaScript · HTML · CSS</li><li>Bootstrap</li></ul></div>
+        <div><h3 data-i18n="sk.5">AI</h3><ul><li>Claude API <small data-i18n="lv.prod">ใช้ในผลงาน</small></li><li>Claude Code</li><li>Prompt · Structured output</li><li>ChatGPT</li></ul></div>
+        <div><h3 data-i18n="sk.3">ระบบและการทำงาน</h3><ul><li>Docker</li><li>Git · GitHub Actions</li><li>Vitest · PHPUnit</li><li>UAT · API Debugging</li></ul></div>
       </div>
     </div>
   </section>
@@ -340,10 +365,13 @@
   const EN = {
     'nav.work': 'Work', 'nav.xp': 'Experience', 'nav.skills': 'Skills', 'nav.contact': 'Contact',
     'hero.avail': 'Open to work · Back-end / Full-stack', 'hero.name': 'Thanaphat Aupaphong', 'hero.role': 'Back-end Web Developer',
-    'hero.lead': 'I build back-end systems and APIs with NestJS and Laravel that are correct and easy to maintain. I came from user support, so I design with the people who use these systems every day in mind.',
+    'hero.lead': 'I build back-end systems and APIs with NestJS and Laravel that are correct and easy to maintain, and put AI such as Claude to practical use inside them. I came from user support, so I design with the people who use these systems every day in mind.',
     'hero.cta1': 'View work', 'hero.cta2': 'Résumé', 'hero.cta3': 'Email me',
     'f1.t': 'Focus', 'f1.d': 'Back-end · REST API', 'f2.t': 'Core tools', 'f3.t': 'Experience', 'f3.d': '1.5 yrs support · Dev internship', 'f4.t': 'Education', 'f4.d': 'B.Sc. IT · Buriram Rajabhat',
-    'work.label': 'Selected work', 'work.h': 'Systems I designed and built', 'work.p': 'All three are live to try, with code on GitHub.',
+    'work.label': 'Selected work', 'work.h': 'Systems I designed and built', 'work.p': 'Every one is live to try, with code on GitHub.',
+    'c4.tag': 'Live · AI + Full-stack', 'c4.h': 'IT Helpdesk · AI-assisted ticketing', 'c4.sum': 'Staff report problems in plain Thai; Claude picks the category and priority, summarises the issue and drafts a reply for the IT agent to edit. Built from what I saw in support work.',
+    'c4.b1': 'Claude API with structured output validated by Zod, plus a rule fallback when the AI is unavailable', 'c4.b2': 'Priority-based SLAs, an enforced status flow and three roles', 'c4.b3': 'Two agents can never take the same ticket · 26 tests and CI',
+    'c4.note': 'One-click demo accounts on the login page · first load may take about a minute',
     'c1.tag': 'Live · Capstone', 'c1.h': 'Elderly Dependency Assessment System (ADL)', 'c1.sum': 'Moves community elderly-health records from paper to digital, from field assessments by staff to care instructions from doctors.',
     'c1.b1': 'Three standard assessments: Barthel ADL, Care Giver and TAI', 'c1.b2': 'Role-based access for Admin, Staff and Doctor', 'c1.b3': 'Migrated from MySQL to PostgreSQL and deployed with Docker',
     'c.live': 'Try it live ↗', 'c.code': 'View code ↗', 'c1.note': 'Demo login <code>demo_staff</code> / <code>Demo@2026</code> · first load may take about a minute',
@@ -355,7 +383,7 @@
     'x1.w': 'Oct 2026 – now', 'x1.p': 'Support in-house users with printers, networking and Microsoft Office, and develop the company website with help from Claude Code and ChatGPT.',
     'x2.w': 'May 2025 – Oct 2026', 'x2.p': 'Resolved customer issues over LINE, ran UAT on every release, traced errors with DevTools and handed endpoints and payloads to developers, and wrote one-page user guides.',
     'x3.w': '3-month internship', 'x3.p': 'Built REST APIs with Laravel 11.', 'x4.w': 'Graduated 2024', 'x4.h': 'B.Sc. Information Technology', 'x4.o': 'Buriram Rajabhat University',
-    'sk.label': 'Skills', 'sk.h': 'Tools I work with', 'sk.1': 'Back-end', 'sk.2': 'Front-end', 'sk.3': 'Systems & workflow', 'lv.main': 'core', 'lv.now': 'current',
+    'sk.label': 'Skills', 'sk.h': 'Tools I work with', 'sk.1': 'Back-end', 'sk.2': 'Front-end', 'sk.3': 'Systems & workflow', 'sk.4': 'Databases', 'sk.5': 'AI', 'lv.main': 'core', 'lv.now': 'current', 'lv.prod': 'in my work',
     'ct.h': 'Looking for someone to build your back end?', 'ct.p': 'Happy to talk about full-time roles, projects, or just compare notes on tech. I reply within a day.',
     'ft': '© 2026 Thanaphat Aupaphong', 'ft.cv': 'Résumé →',
   };
@@ -381,7 +409,7 @@
 
   // wake the free Render instance before a visitor clicks "try it live"
   let warmed = false;
-  new IntersectionObserver(([e], o) => { if (e.isIntersecting && !warmed) { warmed = true; o.disconnect(); ['https://adl-assessment.onrender.com/up', 'https://clinic-queue-api-um6b.onrender.com/up', 'https://driverent-whky.onrender.com/api/cars'].forEach(u => fetch(u, { mode: 'no-cors' }).catch(() => {})); } }, { rootMargin: '400px 0px' }).observe(document.getElementById('work'));
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting && !warmed) { warmed = true; o.disconnect(); ['https://adl-assessment.onrender.com/up', 'https://clinic-queue-api-um6b.onrender.com/up', 'https://driverent-whky.onrender.com/api/cars', 'https://it-helpdesk-1bkc.onrender.com/api/health'].forEach(u => fetch(u, { mode: 'no-cors' }).catch(() => {})); } }, { rootMargin: '400px 0px' }).observe(document.getElementById('work'));
 })();
 </script>
 </body>

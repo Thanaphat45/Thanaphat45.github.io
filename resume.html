@@ -160,17 +160,30 @@
       <h2>ผลงาน</h2>
       <div class="body">
         <article class="item">
+          <h3>IT Helpdesk · ระบบแจ้งซ่อมไอทีที่มี AI ช่วยคัดแยก</h3>
+          <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
+          <ul>
+            <li>ใช้ Claude API จัดหมวด ประเมินความเร่งด่วน สรุปเรื่อง และร่างคำตอบให้เจ้าหน้าที่ IT (structured output ตรวจผลด้วย Zod) มีกฎสำรองเมื่อ AI ใช้ไม่ได้และจำกัดจำนวนครั้งต่อวัน</li>
+            <li>SLA ตามความเร่งด่วน สถานะงานเดินตามลำดับ สิทธิ์ 3 บทบาท และกันเจ้าหน้าที่สองคนรับงานเดียวกันพร้อมกัน · 26 tests + CI</li>
+          </ul>
+          <p class="contact"><a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">ลองใช้งาน</a> <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></p>
+        </article>
+        <article class="item">
           <h3>ระบบประเมินผู้สูงอายุที่มีภาวะพึ่งพิง (ADL)</h3>
           <p class="org">โปรเจกต์จบ · Laravel, PHP, PostgreSQL, Docker · deploy บน Render + Supabase</p>
           <p class="contact"><a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a> <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></p>
         </article>
         <article class="item">
-          <div class="item-head">
-            <h3>ระบบเช่ารถ</h3>
-            <span class="when">กำลังพัฒนา</span>
-          </div>
-          <p class="org">React, TypeScript, Vite</p>
-          <ul><li>ระบบล็อกอินและสมัครสมาชิก ค้นหาและกรองรถ และหน้าผู้ดูแลระบบสำหรับจัดการรถ</li></ul>
+          <h3>Clinic Queue API · ระบบบัตรคิวคลินิก</h3>
+          <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
+          <ul><li>REST API ออกบัตรคิว เรียกคิว และจอแสดงคิว เลขคิวไม่ซ้ำแม้หลายตู้กดพร้อมกัน (transaction + row lock) · 21 tests</li></ul>
+          <p class="contact"><a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></p>
+        </article>
+        <article class="item">
+          <h3>DriveRent · ระบบเช่ารถ</h3>
+          <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
+          <ul><li>คำนวณราคาฝั่งเซิร์ฟเวอร์และตัดสต็อกใน transaction หน้า Admin จัดการรถและสิทธิ์ผู้ใช้</li></ul>
+          <p class="contact"><a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a> <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></p>
         </article>
       </div>
     </section>
@@ -196,22 +209,26 @@
           <h3>พัฒนาเว็บ</h3>
           <ul class="tags">
             <li class="strong">NestJS</li><li class="strong">Laravel</li><li class="strong">PHP</li><li class="strong">API Design</li>
-            <li>MySQL</li><li>PostgreSQL</li><li>Docker</li><li>Supabase</li><li>Render</li>
-            <li>Node.js</li><li>React</li><li>TypeScript</li><li>JavaScript</li><li>Bootstrap</li>
+            <li>Node.js</li><li>TypeScript</li><li>Express</li><li>TypeORM</li><li>Angular</li><li>React</li><li>JavaScript</li><li>Bootstrap</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>ฐานข้อมูลและ deploy</h3>
+          <ul class="tags">
+            <li class="strong">PostgreSQL</li><li class="strong">MySQL</li><li>Supabase</li><li>DBeaver</li><li>Navicat</li><li>XAMPP</li><li>Docker</li><li>Render</li><li>GitHub Actions</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>AI</h3>
+          <ul class="tags">
+            <li class="strong">Claude API</li><li>Claude Code</li><li>Prompt design</li><li>Structured output</li><li>ChatGPT</li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>ทดสอบและซัพพอร์ต</h3>
           <ul class="tags">
-            <li>UAT Testing</li><li>Browser DevTools</li><li>API Debugging</li>
-            <li>AnyDesk</li><li>เขียนคู่มือผู้ใช้</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>IT ทั่วไปและเครื่องมือ AI</h3>
-          <ul class="tags">
-            <li>Printer &amp; Network</li><li>Microsoft Office</li>
-            <li>Claude Code</li><li>ChatGPT</li>
+            <li>UAT Testing</li><li>Vitest</li><li>PHPUnit</li><li>Browser DevTools</li><li>API Debugging</li>
+            <li>AnyDesk</li><li>Printer &amp; Network</li><li>Microsoft Office</li><li>เขียนคู่มือผู้ใช้</li>
           </ul>
         </div>
       </div>

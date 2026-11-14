@@ -34,6 +34,8 @@
     max-width: 880px; margin: 0 auto; background: var(--paper);
     border: 1px solid var(--line); padding: 64px 72px;
   }
+  .photo { float: right; width: 120px; height: 160px; object-fit: cover; border-radius: 8px; margin: 0 0 12px 24px; }
+  header::after { content: ""; display: block; clear: both; }
   header { border-bottom: 2px solid var(--ink); padding-bottom: 32px; margin-bottom: 40px; }
   h1 { font-size: 40px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
   .en { font-family: var(--mono); font-size: 15px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
@@ -42,7 +44,10 @@
   .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
   .contact a:hover { border-color: var(--accent); color: var(--accent); }
   .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .summary { margin-top: 12px; max-width: 62ch; color: var(--muted); }
+  .summary { margin-top: 14px; max-width: 64ch; color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .proj-links { margin-top: 8px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .proj-links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .proj-links span + span::before { content: " · "; }
 
   .grid { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; }
   section { display: contents; }
@@ -82,6 +87,7 @@
     body { padding: 0; }
     .sheet { border: 0; padding: 40px 16px; }
     h1 { font-size: 32px; }
+    .photo { width: 84px; height: 112px; margin-left: 16px; }
     .grid { grid-template-columns: 1fr; }
     h2 { margin-bottom: 16px; }
   }
@@ -90,6 +96,29 @@
     .sheet { border: 0; padding: 0; max-width: none; }
     .print-btn { display: none; }
     :root { --paper:#fff; --ink:#000; --bg:#fff; }
+    @page { margin: 14mm 14mm; }
+    body { font-size: 13px; line-height: 1.55; }
+    .body { padding-bottom: 18px; margin-bottom: 18px; }
+    .item + .item { margin-top: 16px; }
+    .skills { gap: 10px; }
+    .tags { gap: 4px; }
+    .tags li { padding: 1px 8px; font-size: 12px; }
+    .item { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .grid { grid-template-columns: 96px 1fr; gap: 0 20px; }
+    h1 { font-size: 28px; }
+    .photo { width: 96px; height: 128px; }
+    .role { margin-top: 8px; font-size: 15px; }
+    .contact { margin-top: 6px; font-size: 12px; gap: 4px 16px; }
+    .summary { font-size: 13px; line-height: 1.6; margin-top: 8px; max-width: none; }
+    header { padding-bottom: 14px !important; margin-bottom: 18px !important; }
+    h2 { font-size: 11px; }
+    h3 { font-size: 15px; }
+    .skill-group h3 { font-size: 13px; margin-bottom: 4px; }
+    .when { font-size: 11px; }
+    ul { margin-top: 4px; }
+    li { margin-top: 2px; }
+    .proj-links { margin-top: 4px; font-size: 11px; }
   }
 </style>
 </head>
@@ -97,21 +126,55 @@
 <a class="back" href="index.html">← กลับไปหน้าแนะนำตัว</a> <a class="back" href="resume-en.html" style="margin-top:-8px">English version</a>
 <main class="sheet">
   <header>
+    <img class="photo" src="images/profile.jpg" alt="รูปธนภัทร อุปพงษ์" width="120" height="160">
     <h1>ธนภัทร อุปพงษ์</h1>
     <p class="en">THANAPHAT AUPAPHONG</p>
-    <p class="role">Web Developer · Application Support</p>
+    <p class="role">Back-end Developer · NestJS · Laravel</p>
     <p class="contact">
       <a href="mailto:thanaphat.aupaphong45@gmail.com">thanaphat.aupaphong45@gmail.com</a>
+      <a href="tel:0973380410">097-338-0410 (โทร / LINE)</a>
       <a href="https://github.com/Thanaphat45" target="_blank" rel="noopener">github.com/Thanaphat45</a>
     </p>
     <p class="summary">
-      จบสาขาเทคโนโลยีสารสนเทศ สายโปรแกรมเมอร์ ถนัดเขียนเว็บ โดยเฉพาะการออกแบบฟังก์ชันหลังบ้านและ API
-      และทำหน้าบ้านได้ มีประสบการณ์ซัพพอร์ตระบบจริงกับผู้ใช้ ทดสอบ UAT และวิเคราะห์ error ส่งต่อทีมพัฒนา
-      ปัจจุบันใช้เครื่องมือ AI อย่าง Claude Code และ ChatGPT ในการพัฒนาเว็บไซต์ขององค์กร
+      นักพัฒนาสายหลังบ้าน ใช้ NestJS และ Laravel สร้าง REST API มีผลงาน 4 ระบบที่ deploy และเปิดให้ลองใช้งานจริง
+      รวมถึงระบบแจ้งซ่อมที่เชื่อม Claude API เข้ากับระบบจริง และระบบคิวคลินิกที่มี automated tests และ CI
+      มีประสบการณ์ซัพพอร์ตผู้ใช้จริง 1.5 ปี ทดสอบ UAT และวิเคราะห์ error ส่งต่อทีมพัฒนา ปัจจุบันพัฒนาเว็บไซต์องค์กรทั้งเว็บด้วยตัวเอง
     </p>
   </header>
 
   <div class="grid">
+    <section>
+      <h2>ผลงาน</h2>
+      <div class="body">
+        <article class="item">
+          <h3>IT Helpdesk · ระบบแจ้งซ่อมไอทีที่มี AI ช่วยคัดแยก</h3>
+          <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
+          <ul>
+            <li>ใช้ Claude API จัดหมวด ประเมินความเร่งด่วน สรุปเรื่อง และร่างคำตอบให้เจ้าหน้าที่ IT (structured output ตรวจผลด้วย Zod) มีกฎสำรองเมื่อ AI ใช้ไม่ได้และจำกัดจำนวนครั้งต่อวัน</li>
+            <li>SLA ตามความเร่งด่วน สถานะงานเดินตามลำดับ สิทธิ์ 3 บทบาท และกันเจ้าหน้าที่สองคนรับงานเดียวกันพร้อมกัน · 26 tests + CI</li>
+          </ul>
+          <p class="proj-links"><span>ลองใช้งาน <a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">it-helpdesk-1bkc.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></span></p>
+        </article>
+        <article class="item">
+          <h3>ระบบประเมินผู้สูงอายุที่มีภาวะพึ่งพิง (ADL)</h3>
+          <p class="org">โปรเจกต์จบ · Laravel, PHP, PostgreSQL, Docker · deploy บน Render + Supabase</p>
+          <p class="proj-links"><span>ลองใช้งาน <a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></span></p>
+        </article>
+        <article class="item">
+          <h3>Clinic Queue API · ระบบบัตรคิวคลินิก</h3>
+          <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
+          <ul><li>REST API ออกบัตรคิว เรียกคิว และจอแสดงคิว เลขคิวไม่ซ้ำแม้หลายตู้กดพร้อมกัน (transaction + row lock) · 21 tests</li></ul>
+          <p class="proj-links"><span>ลองใช้งาน <a href="https://clinic-queue-api-um6b.onrender.com/api/v1/services" target="_blank" rel="noopener">clinic-queue-api-um6b.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></span></p>
+        </article>
+        <article class="item">
+          <h3>DriveRent · ระบบเช่ารถ</h3>
+          <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
+          <ul><li>คำนวณราคาฝั่งเซิร์ฟเวอร์และตัดสต็อกใน transaction หน้า Admin จัดการรถและสิทธิ์ผู้ใช้</li></ul>
+          <p class="proj-links"><span>ลองใช้งาน <a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></span></p>
+        </article>
+      </div>
+    </section>
+
     <section>
       <h2>ประสบการณ์</h2>
       <div class="body">
@@ -120,11 +183,11 @@
             <h3>IT Support</h3>
             <span class="when">26 ต.ค. 2569 – ปัจจุบัน</span>
           </div>
-          <p class="org">Theniya Corporation</p>
+          <p class="org">The Niya Corporation · <a href="https://www.theniyacorporation.com" style="color:inherit">theniyacorporation.com</a></p>
           <ul>
+            <li>พัฒนาเว็บไซต์ขององค์กรทั้งเว็บด้วยตัวเองตามความต้องการของบริษัท โดยใช้ Claude Code และ ChatGPT ช่วยพัฒนา</li>
             <li>ซัพพอร์ตผู้ใช้ภายในบริษัท แก้ปัญหาเครื่องพิมพ์ เชื่อมต่อเครื่องพิมพ์ใหม่ และแก้ปัญหา Wi‑Fi</li>
             <li>แก้ปัญหาการใช้งาน Microsoft Office เช่น Excel และ Word</li>
-            <li>พัฒนาเว็บไซต์ขององค์กรตามความต้องการของบริษัท โดยใช้ Claude Code และ ChatGPT ช่วยพัฒนา</li>
           </ul>
         </article>
 
@@ -150,40 +213,9 @@
           </div>
           <p class="org">Asha Tech Corporation</p>
           <ul>
-            <li>พัฒนา API เบื้องต้นด้วย Laravel 11</li>
+            <li>พัฒนา REST API ด้วย Laravel 11 สำหรับจัดการข้อมูลแบบ CRUD (เพิ่ม ดู แก้ไข ลบ)</li>
+            <li>ทำฟังก์ชันนำเข้าข้อมูล (Data Import) เข้าสู่ฐานข้อมูล</li>
           </ul>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <h2>ผลงาน</h2>
-      <div class="body">
-        <article class="item">
-          <h3>IT Helpdesk · ระบบแจ้งซ่อมไอทีที่มี AI ช่วยคัดแยก</h3>
-          <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
-          <ul>
-            <li>ใช้ Claude API จัดหมวด ประเมินความเร่งด่วน สรุปเรื่อง และร่างคำตอบให้เจ้าหน้าที่ IT (structured output ตรวจผลด้วย Zod) มีกฎสำรองเมื่อ AI ใช้ไม่ได้และจำกัดจำนวนครั้งต่อวัน</li>
-            <li>SLA ตามความเร่งด่วน สถานะงานเดินตามลำดับ สิทธิ์ 3 บทบาท และกันเจ้าหน้าที่สองคนรับงานเดียวกันพร้อมกัน · 26 tests + CI</li>
-          </ul>
-          <p class="contact"><a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">ลองใช้งาน</a> <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></p>
-        </article>
-        <article class="item">
-          <h3>ระบบประเมินผู้สูงอายุที่มีภาวะพึ่งพิง (ADL)</h3>
-          <p class="org">โปรเจกต์จบ · Laravel, PHP, PostgreSQL, Docker · deploy บน Render + Supabase</p>
-          <p class="contact"><a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a> <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></p>
-        </article>
-        <article class="item">
-          <h3>Clinic Queue API · ระบบบัตรคิวคลินิก</h3>
-          <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
-          <ul><li>REST API ออกบัตรคิว เรียกคิว และจอแสดงคิว เลขคิวไม่ซ้ำแม้หลายตู้กดพร้อมกัน (transaction + row lock) · 21 tests</li></ul>
-          <p class="contact"><a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></p>
-        </article>
-        <article class="item">
-          <h3>DriveRent · ระบบเช่ารถ</h3>
-          <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
-          <ul><li>คำนวณราคาฝั่งเซิร์ฟเวอร์และตัดสต็อกใน transaction หน้า Admin จัดการรถและสิทธิ์ผู้ใช้</li></ul>
-          <p class="contact"><a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a> <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></p>
         </article>
       </div>
     </section>
@@ -215,7 +247,7 @@
         <div class="skill-group">
           <h3>ฐานข้อมูลและ deploy</h3>
           <ul class="tags">
-            <li class="strong">PostgreSQL</li><li class="strong">MySQL</li><li>Supabase</li><li>DBeaver</li><li>Navicat</li><li>XAMPP</li><li>Docker</li><li>Render</li><li>GitHub Actions</li>
+            <li class="strong">PostgreSQL</li><li class="strong">MySQL</li><li>Supabase</li><li>DBeaver</li><li>Docker</li><li>Render</li><li>GitHub Actions</li>
           </ul>
         </div>
         <div class="skill-group">
@@ -228,7 +260,7 @@
           <h3>ทดสอบและซัพพอร์ต</h3>
           <ul class="tags">
             <li>UAT Testing</li><li>Vitest</li><li>PHPUnit</li><li>Browser DevTools</li><li>API Debugging</li>
-            <li>AnyDesk</li><li>Printer &amp; Network</li><li>Microsoft Office</li><li>เขียนคู่มือผู้ใช้</li>
+            <li>AnyDesk</li><li>Microsoft Office</li><li>เขียนคู่มือผู้ใช้</li>
           </ul>
         </div>
       </div>

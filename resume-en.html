@@ -34,6 +34,8 @@
     max-width: 880px; margin: 0 auto; background: var(--paper);
     border: 1px solid var(--line); padding: 64px 72px;
   }
+  .photo { float: right; width: 120px; height: 160px; object-fit: cover; border-radius: 8px; margin: 0 0 12px 24px; }
+  header::after { content: ""; display: block; clear: both; }
   header { border-bottom: 2px solid var(--ink); padding-bottom: 32px; margin-bottom: 40px; }
   h1 { font-size: 40px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
   .en { font-family: var(--mono); font-size: 15px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
@@ -42,7 +44,10 @@
   .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
   .contact a:hover { border-color: var(--accent); color: var(--accent); }
   .contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .summary { margin-top: 12px; max-width: 62ch; color: var(--muted); }
+  .summary { margin-top: 14px; max-width: 64ch; color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .proj-links { margin-top: 8px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .proj-links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .proj-links span + span::before { content: " · "; }
 
   .grid { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; }
   section { display: contents; }
@@ -82,6 +87,7 @@
     body { padding: 0; }
     .sheet { border: 0; padding: 40px 16px; }
     h1 { font-size: 32px; }
+    .photo { width: 84px; height: 112px; margin-left: 16px; }
     .grid { grid-template-columns: 1fr; }
     h2 { margin-bottom: 16px; }
   }
@@ -90,6 +96,29 @@
     .sheet { border: 0; padding: 0; max-width: none; }
     .print-btn { display: none; }
     :root { --paper:#fff; --ink:#000; --bg:#fff; }
+    @page { margin: 14mm 14mm; }
+    body { font-size: 13px; line-height: 1.55; }
+    .body { padding-bottom: 18px; margin-bottom: 18px; }
+    .item + .item { margin-top: 16px; }
+    .skills { gap: 10px; }
+    .tags { gap: 4px; }
+    .tags li { padding: 1px 8px; font-size: 12px; }
+    .item { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .grid { grid-template-columns: 96px 1fr; gap: 0 20px; }
+    h1 { font-size: 28px; }
+    .photo { width: 96px; height: 128px; }
+    .role { margin-top: 8px; font-size: 15px; }
+    .contact { margin-top: 6px; font-size: 12px; gap: 4px 16px; }
+    .summary { font-size: 13px; line-height: 1.6; margin-top: 8px; max-width: none; }
+    header { padding-bottom: 14px !important; margin-bottom: 18px !important; }
+    h2 { font-size: 11px; }
+    h3 { font-size: 15px; }
+    .skill-group h3 { font-size: 13px; margin-bottom: 4px; }
+    .when { font-size: 11px; }
+    ul { margin-top: 4px; }
+    li { margin-top: 2px; }
+    .proj-links { margin-top: 4px; font-size: 11px; }
   }
 </style>
 </head>
@@ -97,31 +126,69 @@
 <a class="back" href="index.html">← Back to portfolio</a> <a class="back" href="resume.html" style="margin-top:-8px">ภาษาไทย</a>
 <main class="sheet">
   <header>
+    <img class="photo" src="images/profile.jpg" alt="Photo of Thanaphat Aupaphong" width="120" height="160">
     <h1>Thanaphat Aupaphong</h1>
     <p class="en">ธนภัทร อุปพงษ์</p>
-    <p class="role">Back-end Web Developer · Application Support</p>
+    <p class="role">Back-end Developer · NestJS · Laravel</p>
     <p class="contact">
       <a href="mailto:thanaphat.aupaphong45@gmail.com">thanaphat.aupaphong45@gmail.com</a>
+      <a href="tel:+66973380410">+66 97 338 0410 (Phone / LINE)</a>
       <a href="https://github.com/Thanaphat45" target="_blank" rel="noopener">github.com/Thanaphat45</a>
     </p>
     <p class="summary">
-      IT graduate on the programming track, focused on back-end web development and API design, comfortable on the front end.
-      One year of hands-on application support: handling real user issues, running UAT, and tracing errors down to the endpoint and payload for the dev team.
-      Currently improving a company website with AI tools such as Claude Code and ChatGPT.
+      Back-end developer building REST APIs with NestJS and Laravel, with four systems deployed and open to try live,
+      including an IT helpdesk that puts the Claude API into a real workflow. Key projects ship with automated tests and CI.
+      1.5 years of application support: real user issues, UAT, and tracing errors to the endpoint and payload for the dev team. Currently building my company's website end to end.
     </p>
   </header>
 
   <div class="grid">
     <section>
+      <h2>Projects</h2>
+      <div class="body">
+        <article class="item">
+          <h3>IT Helpdesk · AI-assisted ticketing</h3>
+          <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
+          <ul>
+            <li>Claude API picks category and priority, summarises each ticket and drafts a reply for IT staff (structured output validated with Zod), with a rule fallback and a daily call cap</li>
+            <li>Priority-based SLAs, enforced status flow, three roles, and race-safe ticket claiming · 26 tests + CI</li>
+          </ul>
+          <p class="proj-links"><span>Live <a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">it-helpdesk-1bkc.onrender.com</a></span><span>Code <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></span></p>
+        </article>
+        <article class="item">
+          <h3>Dependent Elderly Assessment System (ADL)</h3>
+          <p class="org">Capstone · Laravel, PHP, PostgreSQL, Docker · deployed on Render + Supabase</p>
+          <ul>
+            <li>Digitizes community elderly-health assessments (Barthel ADL, Care Giver, TAI) with role-based access for Admin, Staff and Doctor</li>
+            <li>Ported the app from MySQL to PostgreSQL while keeping MySQL support, and deployed it with Docker on Render + Supabase</li>
+          </ul>
+          <p class="proj-links"><span>Live <a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a></span><span>Code <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></span></p>
+        </article>
+        <article class="item">
+          <h3>Clinic Queue API</h3>
+          <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
+          <ul><li>REST API for ticket kiosks, counters and queue boards; no duplicate numbers under concurrent issue (transaction + row lock) · 21 tests</li></ul>
+          <p class="proj-links"><span>Live <a href="https://clinic-queue-api-um6b.onrender.com/api/v1/services" target="_blank" rel="noopener">clinic-queue-api-um6b.onrender.com</a></span><span>Code <a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></span></p>
+        </article>
+        <article class="item">
+          <h3>DriveRent · Car rental</h3>
+          <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
+          <ul><li>Server-side pricing and stock updates in a transaction; admin area for cars and user roles</li></ul>
+          <p class="proj-links"><span>Live <a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a></span><span>Code <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></span></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
       <h2>Experience</h2>
       <div class="body">
         <article class="item">
           <div class="item-head"><h3>IT Support</h3><span class="when">Oct 2026 – Present</span></div>
-          <p class="org">Theniya Corporation</p>
+          <p class="org">The Niya Corporation · <a href="https://www.theniyacorporation.com" style="color:inherit">theniyacorporation.com</a></p>
           <ul>
+            <li>Built the entire company website on my own to business requirements, using Claude Code and ChatGPT</li>
             <li>Support in-house users: printer issues, new printer setup and Wi‑Fi troubleshooting</li>
             <li>Resolve Microsoft Office problems (Excel, Word)</li>
-            <li>Develop the company website to business requirements using Claude Code and ChatGPT</li>
           </ul>
         </article>
         <article class="item">
@@ -138,43 +205,7 @@
         <article class="item">
           <div class="item-head"><h3>Web Developer Intern</h3><span class="when">3 months</span></div>
           <p class="org">Asha Tech Corporation</p>
-          <ul><li>Built REST APIs with Laravel 11</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="body">
-        <article class="item">
-          <h3>IT Helpdesk · AI-assisted ticketing</h3>
-          <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
-          <ul>
-            <li>Claude API picks category and priority, summarises each ticket and drafts a reply for IT staff (structured output validated with Zod), with a rule fallback and a daily call cap</li>
-            <li>Priority-based SLAs, enforced status flow, three roles, and race-safe ticket claiming · 26 tests + CI</li>
-          </ul>
-          <p class="contact"><a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">Live demo</a> <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></p>
-        </article>
-        <article class="item">
-          <h3>Dependent Elderly Assessment System (ADL)</h3>
-          <p class="org">Capstone · Laravel, PHP, PostgreSQL, Docker · deployed on Render + Supabase</p>
-          <ul>
-            <li>Digitizes community elderly-health assessments (Barthel ADL, Care Giver, TAI) with role-based access for Admin, Staff and Doctor</li>
-            <li>Ported the app from MySQL to PostgreSQL while keeping MySQL support, and deployed it with Docker on Render + Supabase</li>
-          </ul>
-          <p class="contact"><a href="https://adl-assessment.onrender.com" target="_blank" rel="noopener">adl-assessment.onrender.com</a> <a href="https://github.com/Thanaphat45/Project_finish" target="_blank" rel="noopener">github.com/Thanaphat45/Project_finish</a></p>
-        </article>
-        <article class="item">
-          <h3>Clinic Queue API</h3>
-          <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
-          <ul><li>REST API for ticket kiosks, counters and queue boards; no duplicate numbers under concurrent issue (transaction + row lock) · 21 tests</li></ul>
-          <p class="contact"><a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></p>
-        </article>
-        <article class="item">
-          <h3>DriveRent · Car rental</h3>
-          <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
-          <ul><li>Server-side pricing and stock updates in a transaction; admin area for cars and user roles</li></ul>
-          <p class="contact"><a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a> <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></p>
+          <ul><li>Built REST APIs with Laravel 11 for CRUD data management (create, read, update, delete)</li><li>Built a data import feature that loads records into the database</li></ul>
         </article>
       </div>
     </section>
@@ -197,11 +228,11 @@
           <li class="strong">NestJS</li><li class="strong">Laravel</li><li class="strong">PHP</li><li class="strong">API Design</li>
           <li>Node.js</li><li>TypeScript</li><li>Express</li><li>TypeORM</li><li>Angular</li><li>React</li><li>JavaScript</li><li>Bootstrap</li></ul></div>
         <div class="skill-group"><h3>Databases &amp; deployment</h3><ul class="tags">
-          <li class="strong">PostgreSQL</li><li class="strong">MySQL</li><li>Supabase</li><li>DBeaver</li><li>Navicat</li><li>XAMPP</li><li>Docker</li><li>Render</li><li>GitHub Actions</li></ul></div>
+          <li class="strong">PostgreSQL</li><li class="strong">MySQL</li><li>Supabase</li><li>DBeaver</li><li>Docker</li><li>Render</li><li>GitHub Actions</li></ul></div>
         <div class="skill-group"><h3>AI</h3><ul class="tags">
           <li class="strong">Claude API</li><li>Claude Code</li><li>Prompt design</li><li>Structured output</li><li>ChatGPT</li></ul></div>
         <div class="skill-group"><h3>Testing &amp; support</h3><ul class="tags">
-          <li>UAT Testing</li><li>Vitest</li><li>PHPUnit</li><li>Browser DevTools</li><li>API Debugging</li><li>AnyDesk</li><li>Printer &amp; Network</li><li>Microsoft Office</li><li>User documentation</li></ul></div>
+          <li>UAT Testing</li><li>Vitest</li><li>PHPUnit</li><li>Browser DevTools</li><li>API Debugging</li><li>AnyDesk</li><li>Microsoft Office</li><li>User documentation</li></ul></div>
       </div>
     </section>
   </div>

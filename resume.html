@@ -167,9 +167,9 @@
       <a href="https://github.com/Thanaphat45" target="_blank" rel="noopener">github.com/Thanaphat45</a>
     </p>
     <p class="summary">
-      นักพัฒนาสายหลังบ้าน ใช้ NestJS และ Laravel สร้าง REST API มีผลงาน 4 ระบบที่ deploy และเปิดให้ลองใช้งานจริง
-      รวมถึงระบบแจ้งซ่อมที่เชื่อม Claude API เข้ากับระบบจริง และระบบคิวคลินิกที่มี automated tests และ CI
-      มีประสบการณ์ซัพพอร์ตผู้ใช้จริง 1.5 ปี ทดสอบ UAT และวิเคราะห์ error ส่งต่อทีมพัฒนา ปัจจุบันพัฒนาเว็บไซต์องค์กรทั้งเว็บด้วยตัวเอง
+      นักพัฒนา Back-end ที่พัฒนาระบบและ REST API ด้วย NestJS และ Laravel โดยเน้นความถูกต้องของข้อมูล การทดสอบอัตโนมัติ และโค้ดที่ดูแลต่อได้ง่าย
+      มีผลงาน 4 ระบบที่เปิดใช้งานจริง รวมถึงระบบแจ้งซ่อมที่นำ Claude API มาใช้ในงานจริง
+      มีประสบการณ์ซัพพอร์ตผู้ใช้ 1.5 ปี ด้านการทดสอบ UAT และการวิเคราะห์ error ปัจจุบันรับผิดชอบพัฒนาเว็บไซต์องค์กรทั้งหมดด้วยตนเอง
     </p>
   </header>
 
@@ -181,8 +181,8 @@
           <h3>IT Helpdesk · ระบบแจ้งซ่อมไอทีที่มี AI ช่วยคัดแยก</h3>
           <p class="org">NestJS, Angular, Claude API, TypeORM, PostgreSQL, Docker</p>
           <ul>
-            <li>ใช้ Claude API จัดหมวด ประเมินความเร่งด่วน สรุปเรื่อง และร่างคำตอบให้เจ้าหน้าที่ IT (structured output ตรวจผลด้วย Zod) มีกฎสำรองเมื่อ AI ใช้ไม่ได้และจำกัดจำนวนครั้งต่อวัน</li>
-            <li>SLA ตามความเร่งด่วน สถานะงานเดินตามลำดับ สิทธิ์ 3 บทบาท และกันเจ้าหน้าที่สองคนรับงานเดียวกันพร้อมกัน · 26 tests + CI</li>
+            <li>ใช้ Claude API จัดหมวดหมู่ ประเมินความเร่งด่วน สรุปปัญหา และร่างคำตอบให้เจ้าหน้าที่ IT (structured output ตรวจสอบด้วย Zod) พร้อมกฎสำรองเมื่อ AI ไม่พร้อมใช้งาน และจำกัดจำนวนการเรียกต่อวัน</li>
+            <li>กำหนด SLA ตามความเร่งด่วน ควบคุมลำดับสถานะงาน แบ่งสิทธิ์ 3 บทบาท และป้องกันการรับงานซ้ำซ้อน · 26 tests + CI</li>
           </ul>
           <p class="proj-links"><span>ลองใช้งาน <a href="https://it-helpdesk-1bkc.onrender.com" target="_blank" rel="noopener">it-helpdesk-1bkc.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/it-helpdesk" target="_blank" rel="noopener">github.com/Thanaphat45/it-helpdesk</a></span></p>
         </article>
@@ -194,13 +194,13 @@
         <article class="item">
           <h3>Clinic Queue API · ระบบบัตรคิวคลินิก</h3>
           <p class="org">Laravel 13, Sanctum, PHPUnit, Docker, GitHub Actions</p>
-          <ul><li>REST API ออกบัตรคิว เรียกคิว และจอแสดงคิว เลขคิวไม่ซ้ำแม้หลายตู้กดพร้อมกัน (transaction + row lock) · 21 tests</li></ul>
+          <ul><li>REST API สำหรับออกบัตรคิว เรียกคิว และจอแสดงคิว รับประกันเลขคิวไม่ซ้ำเมื่อมีการกดพร้อมกันหลายจุด (transaction + row lock) · 21 tests</li></ul>
           <p class="proj-links"><span>ลองใช้งาน <a href="https://clinic-queue-api-um6b.onrender.com/api/v1/services" target="_blank" rel="noopener">clinic-queue-api-um6b.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/clinic-queue-api" target="_blank" rel="noopener">github.com/Thanaphat45/clinic-queue-api</a></span></p>
         </article>
         <article class="item">
           <h3>DriveRent · ระบบเช่ารถ</h3>
           <p class="org">React, TypeScript, Node.js, Express, PostgreSQL (Supabase), JWT</p>
-          <ul><li>คำนวณราคาฝั่งเซิร์ฟเวอร์และตัดสต็อกใน transaction หน้า Admin จัดการรถและสิทธิ์ผู้ใช้</li></ul>
+          <ul><li>คำนวณราคาฝั่งเซิร์ฟเวอร์และตัดสต็อกภายใน transaction พร้อมระบบ Admin สำหรับจัดการรถและสิทธิ์ผู้ใช้</li></ul>
           <p class="proj-links"><span>ลองใช้งาน <a href="https://driverent-whky.onrender.com" target="_blank" rel="noopener">driverent-whky.onrender.com</a></span><span>โค้ด <a href="https://github.com/Thanaphat45/rc_rent" target="_blank" rel="noopener">github.com/Thanaphat45/rc_rent</a></span></p>
         </article>
       </div>
@@ -216,9 +216,9 @@
           </div>
           <p class="org">The Niya Corporation · <a href="https://www.theniyacorporation.com" style="color:inherit">theniyacorporation.com</a></p>
           <ul>
-            <li>พัฒนาเว็บไซต์ขององค์กรทั้งเว็บด้วยตัวเองตามความต้องการของบริษัท โดยใช้ Claude Code และ ChatGPT ช่วยพัฒนา</li>
-            <li>ซัพพอร์ตผู้ใช้ภายในบริษัท แก้ปัญหาเครื่องพิมพ์ เชื่อมต่อเครื่องพิมพ์ใหม่ และแก้ปัญหา Wi‑Fi</li>
-            <li>แก้ปัญหาการใช้งาน Microsoft Office เช่น Excel และ Word</li>
+            <li>พัฒนาเว็บไซต์องค์กรทั้งหมดด้วยตนเองตามความต้องการของบริษัท โดยใช้ Claude Code และ ChatGPT เป็นเครื่องมือช่วยพัฒนา</li>
+            <li>ดูแลผู้ใช้ภายในองค์กร แก้ไขปัญหาและติดตั้งเครื่องพิมพ์ รวมถึงปัญหาเครือข่าย Wi‑Fi</li>
+            <li>แก้ไขปัญหาการใช้งาน Microsoft Office (Excel, Word)</li>
           </ul>
         </article>
 
@@ -229,11 +229,11 @@
           </div>
           <p class="org">Fintechinno</p>
           <ul>
-            <li>รับเรื่องและแก้ปัญหาให้ลูกค้าผ่าน LINE Support ทั้งปัญหาของระบบและปัญหาที่เกิดจากการใช้งานผิดวิธี</li>
-            <li>แก้ปัญหาเองผ่านเครื่องมือหลังบ้านที่ทีมโปรแกรมเมอร์ทำไว้ และใช้ AnyDesk รีโมตเข้าไปดูหน้าจอผู้ใช้เมื่อหาสาเหตุไม่เจอ</li>
-            <li>ทดสอบ UAT ตาม Update List ตรวจว่า flow ปกติยังทำงานได้ก่อน แล้วจึงทดสอบส่วนที่อัปเดต พร้อมบันทึกวิธีทดสอบและผลลัพธ์</li>
-            <li>ใช้ DevTools (Inspect) หาสาเหตุ error แล้วส่ง endpoint และ response payload ต่อให้โปรแกรมเมอร์ที่รับผิดชอบ</li>
-            <li>ทำคู่มือแบบ One-page เพื่อใช้สอนผู้ใช้หน้างาน</li>
+            <li>รับเรื่องและแก้ไขปัญหาให้ลูกค้าผ่าน LINE Support ทั้งปัญหาจากระบบและจากการใช้งาน</li>
+            <li>แก้ไขปัญหาผ่านเครื่องมือหลังบ้านของทีมพัฒนา และใช้ AnyDesk ตรวจสอบหน้าจอผู้ใช้เมื่อต้องหาสาเหตุเพิ่มเติม</li>
+            <li>ทดสอบ UAT ทุกรอบการอัปเดต โดยตรวจ flow หลักก่อนแล้วจึงทดสอบส่วนที่เปลี่ยนแปลง พร้อมบันทึกขั้นตอนและผลการทดสอบ</li>
+            <li>วิเคราะห์สาเหตุ error ด้วย DevTools และส่ง endpoint พร้อม response payload ให้นักพัฒนาที่รับผิดชอบ</li>
+            <li>จัดทำคู่มือ One-page สำหรับอบรมผู้ใช้งาน</li>
           </ul>
         </article>
 
@@ -244,8 +244,8 @@
           </div>
           <p class="org">Asha Tech Corporation</p>
           <ul>
-            <li>พัฒนา REST API ด้วย Laravel 11 สำหรับจัดการข้อมูลแบบ CRUD (เพิ่ม ดู แก้ไข ลบ)</li>
-            <li>ทำฟังก์ชันนำเข้าข้อมูล (Data Import) เข้าสู่ฐานข้อมูล</li>
+            <li>พัฒนา REST API ด้วย Laravel 11 สำหรับจัดการข้อมูลแบบ CRUD</li>
+            <li>พัฒนาฟังก์ชันนำเข้าข้อมูล (Data Import) เข้าสู่ฐานข้อมูล</li>
           </ul>
         </article>
       </div>
@@ -260,7 +260,7 @@
             <span class="when">จบปี 2567</span>
           </div>
           <p class="org">มหาวิทยาลัยราชภัฏบุรีรัมย์</p>
-          <p>สายโปรแกรมเมอร์</p>
+          <p>แขนงการพัฒนาซอฟต์แวร์</p>
         </article>
       </div>
     </section>
